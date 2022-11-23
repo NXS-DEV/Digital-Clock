@@ -23,7 +23,7 @@ def digital_clock():
 
 
 # Customize the label
-text = Label(root, font=('Technology', 150, 'bold'), background="", foreground="#00FFFF")  # #00ff0
+text = Label(root, font=('Technology', 150, 'bold'), background="", foreground="#00ff0")  # #00ff0
 
 digital_clock()
 
