@@ -32,4 +32,3 @@ text.pack(anchor='center')
 
 root.mainloop()
 print("Clock version: " + version)
-# Bug reported : The clock doesn't show the hour.
