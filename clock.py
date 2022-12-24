@@ -1,34 +1,28 @@
 # importing module
-import time
+import tkinter as tk
+from datetime import datetime
 from tkinter import *
 from tkinter.ttk import *
-
-# importing strftime function to retrieve system.
-from time import strftime
-from time import *
-version = "0.0.0.1.3"
+from tkinter import ttk
+version = "0.0.0.1.5"
 # create a window
 root = Tk()
 root.title('Digital Clock | Developed by : Noxious')
-
 # Size of the window by default
-root.geometry('735x300+50+50')
+root.geometry('645x245+50+50')
 
-
-# display time on the label
+# Create a label to display the time
+time_label = Label(root, font=('Technology', 150, 'bold'), background="white", foreground="#00FFFF")
+time_label.pack(fill=tk.BOTH, expand=True, anchor='center')
 def digital_clock():
-    string = strftime("%H:%M:%S")
-    text.config(text=string)
-    text.after(1000, digital_clock)
+    current_time = datetime.now().strftime("%H:%M:%S")
+    time_label.configure(text=current_time)
+    root.after(1000, digital_clock)
 
 
-# Customize the label
-text = Label(root, font=('Technology', 150, 'bold'), background="", foreground="#00ff0")  # #00ff0
-
+#update the time every second
 digital_clock()
 
-# center the clock
-text.pack(anchor='center')
-
+# Main loop of the program
 root.mainloop()
-print("Clock version: " + version)
+
